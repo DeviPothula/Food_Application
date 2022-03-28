@@ -1,0 +1,49 @@
+<html>
+    <head>
+        <style>
+            .form {
+  position: relative;
+  z-index: 1;
+  background: #FFFFFF;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  text-align: center;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+}
+            .form input {
+  font-family: "Roboto", sans-serif;
+  outline: 0;
+  background: #f2f2f2;
+  width: 100%;
+  border: 0;
+  margin: 0 0 15px;
+  padding: 15px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+            body {
+  background: #76b852; /* fallback for old browsers */
+  background: rgb(141,194,111);
+  background: linear-gradient(90deg, rgba(141,194,111,1) 0%, rgba(118,184,82,1) 50%);
+  font-family: "Roboto", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;      
+}
+        </style>
+    </head>
+    <center>
+    <body>
+        <h1>Add Your Item</h1><div class="form">
+        <form method="POST" action="addfood_data" enctype="multipart/form-data">
+            <input type="text" name="nameofthefood" placeholder="nameofthefood"><br>
+            <input type="number" name="numberofpeopleeat" placeholder="numberofpeopleeat"><br>
+            <input type="text" name="price" placeholder="price"><br>
+            <input type="text" name="remarks" placeholder="remarks"><br>
+            <input type="text" name="location" placeholder="location"><br>
+            <input type="text" name="delivery" placeholder="delibery"><br>
+            <input type="file" name="filename" placeholder="choosefile" accept="images/*" multiple><br>
+            <button>Submit</button>
+        </form></div>
+    </body></center>
+</html>
