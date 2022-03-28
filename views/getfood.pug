@@ -1,0 +1,18 @@
+html
+    h1 select your location where you want to get special items!!
+    body
+        form(action="/display"  name="location_form"  method="POST")
+            select(name="mylocation")
+                each val in data
+                    option(value=val)=val
+                option(value="all")="all"
+            button search
+        //- each val in data
+        //-     div(width="200px" heigth="100px" border="1px" display="flex")
+        //-     img(src=val.filename width="100px")
+        //-     p=val.nameofthefood
+        //-     p=val.numberofpeopleeat
+        //-     p=val.price 
+        //-     p=val.remarks
+        //-     p=val.location
+        //-     p=val.delivery

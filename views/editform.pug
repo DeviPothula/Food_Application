@@ -1,0 +1,19 @@
+html
+    head
+        script
+                include myscript.js
+        h1="Edit this order"
+        form(name="editform")
+            input(type="text" value=product.nameofthefood name="nameofthefood")  
+            br
+            input(type="text" value=product.numberofpeopleeat name="numberofpeopleeat")
+            br
+            input(type="text" value=product.price  name="price")
+            br
+            input(type="text" value=product.remarks name="remarks")
+            br
+            input(type="text" value=product.location name="location")
+            br
+            input(type="text" value=product.delivery name="delivery")
+            br
+            button(onclick="updateproduct(event,"+id+")") Update

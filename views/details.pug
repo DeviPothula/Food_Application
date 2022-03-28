@@ -1,0 +1,37 @@
+html
+    head
+        style.
+            .de
+            {
+                border:2px solid black;
+                
+            }
+            button 
+            {
+                background-color: #4CAF50; /* Green */
+                border: 2px solid white;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 10px;
+                margin:10px
+            }
+        h1="Details of selected product"
+    body
+        each val,i in data
+            if(i==id)
+                div(width="200px" heigth="100px" border="1px"  class="de")
+                    img(src=val.filename[0] width="100px")
+                    ul
+                        li="foodname:"+ " " + val.nameofthefood
+                        li="count:" + " " + val.numberofpeopleeat
+                        li="price:" + " " + val.price 
+                        li="reamarks:" + " " + val.remarks
+                        li="Location:" + " " + val.location
+                        li="delivery:" + " " + val.delivery
+                    button
+                        a(href="https://food-devi-123.herokuapp.com/placedorders/"+i) BuyNow
+        button
+            a(href="https://food-devi-123.herokuapp.com/home") HOMEPAGE

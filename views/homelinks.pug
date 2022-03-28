@@ -1,0 +1,92 @@
+html
+    head
+        style.
+            h1
+            {
+                text-align:center;
+            }
+           button
+           {
+                background-color: #4CAF50; /* Green */
+                border: 2px solid white;
+                color: white;
+                padding: 10px 20px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 10px;
+                margin:10px
+            }
+            button :hover
+            {
+            border-left: 3px solid blue;
+            }
+            .de
+            {
+                border:2px solid black;
+                margin-left:10px;
+            }
+            .d
+            {
+                margin-left:530px;
+            }
+            .b
+            {
+                margin-left:350px;
+            }
+            .card
+            {
+                width:130px;
+                height:195px;
+                position:relative;
+                display:inline-block;
+            }
+            .card .img-top
+            {
+                display:none;
+                position:absolute;
+                top:0;
+                left:0;
+                z-index:99;
+            }
+            .card:hover .img-top
+            {
+                display:inline;
+            }
+    h1 Homepage
+    center
+    body
+        div(class="b")
+            button 
+                a(href=" https://food-devi-123.herokuapp.com/addfood") AddFood
+            button 
+                a(href=" https://food-devi-123.herokuapp.com/myorders") PlacedOrders
+            button 
+                a(href=" https://food-devi-123.herokuapp.com/recivedorders") RecivedOrders
+            button 
+                a(href=" https://food-devi-123.herokuapp.com/logout") LOGOUT
+        br
+        br
+        div(class="d")
+            form(action="/display"  name="location_form"  method="POST" )
+                select(name="mylocation")
+                    each val in data
+                        option(value=val.location)=val.location
+                    option(value="all")="all"
+                button search
+        br
+        br
+        div(style="display:flex")
+            each val,i in data
+                a(href="https://food-devi-123.herokuapp.com/details/"+i)
+                    div(border="1px" style="margin:20px;padding:10px;border-style:solid;border-color:black;height:370px;width:180px")
+                        div(class="card" style="height:200px")
+                            img(src=val.filename[0], alt="foodimage" width="200px" height="200px")
+                            img(src=val.filename[1], alt="foodimage" class="img-top" width="200px" height="200px")
+                        p=val.nameofthefood
+                        br
+                        button
+                            a(href=" https://food-devi-123.herokuapp.com/getedit/"+val.id) EditItem
+                        button
+                            a(href=" https://food-devi-123.herokuapp.com/deleteproduct/"+val.id) Delete
+                    
